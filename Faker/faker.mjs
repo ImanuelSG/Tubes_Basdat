@@ -1,4 +1,4 @@
-import { faker } from "@faker-js/faker";
+import { fakerID_ID } from "@faker-js/faker";
 import { parse } from "json2csv";
 import fs from "fs";
 
@@ -6,9 +6,9 @@ import dayjs from "dayjs"; // Day.js library for date manipulation
 
 // Function to generate random video titles
 function generateVideoTitle() {
-  const adjective = faker.word.adjective(); // Random adjective
-  const noun = faker.word.noun(); // Random noun
-  const actionVerb = faker.word.verb(); // Action verb for variation
+  const adjective = fakerID_ID.word.adjective(); // Random adjective
+  const noun = fakerID_ID.word.noun(); // Random noun
+  const actionVerb = fakerID_ID.word.verb(); // Action verb for variation
 
   // Common title structures
   const patterns = [
@@ -20,7 +20,7 @@ function generateVideoTitle() {
     `Secrets of ${adjective} ${noun}`,
   ];
 
-  return faker.helpers.arrayElement(patterns); // Choose a random pattern
+  return fakerID_ID.helpers.arrayElement(patterns); // Choose a random pattern
 }
 
 function getNextMonthSameDate(date) {
@@ -50,7 +50,7 @@ function createDummyData() {
   const MapKomersial = new Map();
 
   for (let i = 0; i < 150; i++) {
-    MapLagu.set(i + 1, faker.music.songName());
+    MapLagu.set(i + 1, fakerID_ID.music.songName());
   }
 
   const subs_type = ["Pelajar", "Perorangan", "Keluarga"];
@@ -78,7 +78,7 @@ function createDummyData() {
   for (const subs of subs_type) {
     subscription_plan.push({
       jenis: subs,
-      harga_per_bulan: faker.number.int({ min: 10000, max: 100000 }),
+      harga_per_bulan: fakerID_ID.number.int({ min: 10000, max: 100000 }),
     });
   }
 
@@ -86,16 +86,16 @@ function createDummyData() {
   for (let i = 0; i < 100; i++) {
     apple_id.push({
       id: i + 1,
-      email: faker.internet.email(),
-      password: faker.internet.password(),
-      nama_pengguna: faker.person.fullName(),
-      no_telepon_recovery: faker.phone.number(),
+      email: fakerID_ID.internet.email(),
+      password: fakerID_ID.internet.password(),
+      nama_pengguna: fakerID_ID.person.fullName(),
+      no_telepon_recovery: fakerID_ID.phone.number(),
     });
   }
 
   // Generate 100 dummy data for SubscriptionData, assume 100 user and 1 subscription plan all inactive
   for (let i = 0; i < 100; i++) {
-    const tanggal_subscribe = faker.date.between({
+    const tanggal_subscribe = fakerID_ID.date.between({
       from: "2020-01-01T00:00:00.000Z",
       to: "2023-01-01T00:00:00.000Z",
     }); // Generate a random past date
@@ -104,7 +104,7 @@ function createDummyData() {
     subscription_data.push({
       subscription_id: 1,
       pengguna_id: i + 1,
-      subscription_plan_jenis: faker.helpers.arrayElement([
+      subscription_plan_jenis: fakerID_ID.helpers.arrayElement([
         "Pelajar",
         "Perorangan",
         "Keluarga",
@@ -116,40 +116,18 @@ function createDummyData() {
     MapSubsDate.set(i + 1, tanggal_berakhir);
   }
 
-  for (let i = 0; i < 50; i++) {
-    const tanggal_subscribe = faker.date.between({
-      from: "2024-04-20T00:00:00.000Z",
-      to: "2024-05-02T00:00:00.000Z",
-    }); // Generate a random past date
-    const tanggal_berakhir = getNextMonthSameDate(tanggal_subscribe); // Get the adjusted next month date
-
-    subscription_data.push({
-      subscription_id: 1,
-      pengguna_id: i + 1,
-      subscription_plan_jenis: faker.helpers.arrayElement([
-        "Pelajar",
-        "Perorangan",
-        "Keluarga",
-      ]),
-      tanggal_subscribe,
-      tanggal_berakhir,
-      status: "aktif",
-    });
-    MapSubsDate.set(i + 1, tanggal_berakhir);
-  }
-
   for (let i = 0; i < 20; i++) {}
 
   // Generate 100 dummy data for Lagu
   for (let i = 0; i < 150; i++) {
-    const randomNumber = faker.number.int({ min: 1, max: 100 });
+    const randomNumber = fakerID_ID.number.int({ min: 1, max: 100 });
 
     lagu.push({
       id: i + 1,
       artis_id: randomNumber,
-      label_id: faker.number.int({ min: 1, max: 100 }),
+      label_id: fakerID_ID.number.int({ min: 1, max: 100 }),
       judul: MapLagu.get(i + 1),
-      durasi: faker.number.int({ min: 120, max: 600 }),
+      durasi: fakerID_ID.number.int({ min: 120, max: 600 }),
       tanggal_rilis: dayjs(MapSubsDate.get(randomNumber)).subtract(20, "day"),
     });
     MapLaguMaker.set(i + 1, randomNumber);
@@ -157,14 +135,14 @@ function createDummyData() {
 
   // Generate 100 dummy data for VideoExtra with dynamic titles
   for (let i = 0; i < 100; i++) {
-    const randomNumber = faker.number.int({ min: 1, max: 100 });
-    const randomDateNumber = faker.number.int({ min: 1, max: 28 });
+    const randomNumber = fakerID_ID.number.int({ min: 1, max: 100 });
+    const randomDateNumber = fakerID_ID.number.int({ min: 1, max: 28 });
     videoExtras.push({
       id: i + 1,
       artis_id: randomNumber,
-      label_id: faker.number.int({ min: 1, max: 100 }),
+      label_id: fakerID_ID.number.int({ min: 1, max: 100 }),
       judul: generateVideoTitle(), // Generate a descriptive video title
-      durasi: faker.number.int({ min: 120, max: 600 }),
+      durasi: fakerID_ID.number.int({ min: 120, max: 600 }),
       tanggal_rilis: dayjs(MapSubsDate.get(randomNumber)).subtract(
         randomDateNumber,
         "day"
@@ -174,14 +152,14 @@ function createDummyData() {
 
   // Generate 100 dummy data for VideoMusik with dynamic titles
   for (let i = 0; i < 150; i++) {
-    const randomNumber = faker.number.int({ min: 1, max: 100 });
+    const randomNumber = fakerID_ID.number.int({ min: 1, max: 100 });
 
     videoMusiks.push({
       id: i + 1,
       judul: MapLagu.get(i + 1) + " Music Video", // Using song names for video titles
-      durasi: faker.number.int({ min: 120, max: 600 }),
+      durasi: fakerID_ID.number.int({ min: 120, max: 600 }),
       tanggal_rilis: dayjs(MapSubsDate.get(randomNumber)).subtract(10, "day"),
-      label_id: faker.number.int({ min: 1, max: 100 }),
+      label_id: fakerID_ID.number.int({ min: 1, max: 100 }),
       lagu_id: i + 1, // Explicitly from 1 to 100
       artis_id: MapLaguMaker.get(i + 1),
     });
@@ -190,7 +168,7 @@ function createDummyData() {
   // Generate 100 dummy data for HostVideoExtra
   for (let i = 0; i < 100; i++) {
     hostVideoExtras.push({
-      host_id: faker.number.int({ min: 1, max: 100 }),
+      host_id: fakerID_ID.number.int({ min: 1, max: 100 }),
       video_extra_id: i + 1,
     });
   }
@@ -199,9 +177,9 @@ function createDummyData() {
   for (let i = 0; i < 100; i++) {
     label.push({
       id: i + 1,
-      nama: faker.company.name(),
-      tahun_berdiri: faker.date.past().getFullYear(),
-      asal_negara: faker.location.country(),
+      nama: fakerID_ID.company.name(),
+      tahun_berdiri: fakerID_ID.date.past().getFullYear(),
+      asal_negara: fakerID_ID.location.country(),
     });
   }
 
@@ -221,13 +199,17 @@ function createDummyData() {
 
   // Generate 100 dummy data for ProdukKomersial
   for (let i = 0; i < 100; i++) {
-    const randomType = faker.helpers.arrayElement(["Album", "Single", "EP"]);
+    const randomType = fakerID_ID.helpers.arrayElement([
+      "Album",
+      "Single",
+      "EP",
+    ]);
     produk_komersial.push({
       id: i + 1,
       artis_id: i + 1,
-      judul: faker.music.songName(),
+      judul: fakerID_ID.music.songName(),
       tipe: randomType,
-      genre: faker.music.genre(),
+      genre: fakerID_ID.music.genre(),
       tanggal_rilis: dayjs(MapSubsDate.get(i + 1)).subtract(20, "day"),
     });
 
@@ -238,14 +220,14 @@ function createDummyData() {
   for (let i = 0; i < 200; i++) {
     playlist.push({
       playlist_id: (i % 5) + 1,
-      pengguna_id: Math.floor(i / 5),
-      nama_playlist: faker.music.genre() + " Playlist",
+      pengguna_id: Math.floor(i / 5) + 1,
+      nama_playlist: fakerID_ID.music.genre() + " Playlist",
     });
   }
 
   // Generate 200 dummy data for IsiPlaylist
   for (let i = 0; i < 200; i++) {
-    const randumLagu = faker.number.int({ min: 1, max: 150 });
+    const randumLagu = fakerID_ID.number.int({ min: 1, max: 150 });
     isi_playlist.push({
       playlist_id: (i % 5) + 1,
       pengguna_id: Math.floor(i / 5) + 1,
@@ -257,10 +239,10 @@ function createDummyData() {
   // Seeding lirik
   for (let i = 0; i < 150; i++) {
     lirik.push({
-      lagu_id: Math.floor(i / 10),
+      lagu_id: Math.floor(i / 10) + 1,
       line: (i % 10) + 1,
-      text: faker.lorem.sentence(),
-      writer_id: Math.floor(i / 10),
+      text: fakerID_ID.lorem.sentence(),
+      writer_id: Math.floor(i / 10) + 1,
     });
   }
 
@@ -270,6 +252,29 @@ function createDummyData() {
       produk_komersial_id: MapKomersial.get(MapLaguMaker.get(i + 1)),
     });
   }
+
+  for (let i = 0; i < 50; i++) {
+    const tanggal_subscribe = fakerID_ID.date.between({
+      from: "2024-04-20T00:00:00.000Z",
+      to: "2024-05-02T00:00:00.000Z",
+    }); // Generate a random past date
+    const tanggal_berakhir = getNextMonthSameDate(tanggal_subscribe); // Get the adjusted next month date
+
+    subscription_data.push({
+      subscription_id: 1,
+      pengguna_id: i + 1,
+      subscription_plan_jenis: fakerID_ID.helpers.arrayElement([
+        "Pelajar",
+        "Perorangan",
+        "Keluarga",
+      ]),
+      tanggal_subscribe,
+      tanggal_berakhir,
+      status: "aktif",
+    });
+    MapSubsDate.set(i + 1, tanggal_berakhir);
+  }
+
   return {
     videoExtras,
     videoMusiks,
