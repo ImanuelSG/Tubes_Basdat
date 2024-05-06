@@ -4,6 +4,10 @@ import fs from "fs";
 
 import dayjs from "dayjs"; // Day.js library for date manipulation
 
+// Buat tahun berdiri label
+const startYear = new Date(2010, 0, 1); // Start of 2010
+const endYear = new Date(2019, 11, 31); // End of 2019
+
 // Function to generate random video titles
 function generateVideoTitle() {
   const adjective = fakerID_ID.word.adjective(); // Random adjective
@@ -178,7 +182,9 @@ function createDummyData() {
     label.push({
       id: i + 1,
       nama: fakerID_ID.company.name(),
-      tahun_berdiri: fakerID_ID.date.past().getFullYear(),
+      tahun_berdiri: fakerID_ID.date
+        .between({ from: startYear, to: endYear })
+        .getFullYear(),
       asal_negara: fakerID_ID.location.country(),
     });
   }
