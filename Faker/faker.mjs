@@ -267,7 +267,7 @@ function createDummyData() {
     const tanggal_berakhir = getNextMonthSameDate(tanggal_subscribe); // Get the adjusted next month date
 
     subscription_data.push({
-      subscription_id: 1,
+      subscription_id: 2,
       pengguna_id: i + 1,
       subscription_plan_jenis: fakerID_ID.helpers.arrayElement([
         "Pelajar",
