@@ -233,25 +233,7 @@ function createDummyData() {
     MapKomersial.set(i + 1, i + 1);
   }
 
-  for (let i = 0; i < 200; i++) {
-    playlist.push({
-      playlist_id: (i % 5) + 1,
-      pengguna_id: Math.floor(i / 5) + 1,
-      nama_playlist: fakerID_ID.music.genre() + " Playlist",
-    });
-  }
-
-  // Generate 200 dummy data for IsiPlaylist
-  for (let i = 0; i < 200; i++) {
-    const randumLagu = fakerID_ID.number.int({ min: 1, max: 150 });
-    isi_playlist.push({
-      playlist_id: (i % 5) + 1,
-      pengguna_id: Math.floor(i / 5) + 1,
-      produk_komersial_id: MapKomersial.get(MapLaguMaker.get(randumLagu)),
-      lagu_id: randumLagu,
-    });
-  }
-
+  
   // Seeding lirik
   for (let i = 0; i < 150; i++) {
     lirik.push({
@@ -261,11 +243,32 @@ function createDummyData() {
       text: fakerID_ID.lorem.sentence(),
     });
   }
+  
+  for (let i = 0; i < 200; i++) {
+    playlist.push({
+      playlist_id: (i % 5) + 1,
+      pengguna_id: Math.floor(i / 5) + 1,
+      nama_playlist: fakerID_ID.music.genre() + " Playlist",
+    });
+  }
 
   for (let i = 0; i < 150; i++) {
     lagu_produk_komersial.push({
       lagu_id: i + 1,
       produk_komersial_id: MapKomersial.get(MapLaguMaker.get(i + 1)),
+    });
+  }
+
+  // Generate 200 dummy data for IsiPlaylist
+  for (let i = 0; i < 200; i++) {
+    const randomPlaylist = fakerID_ID.number.int({ min: 0, max: 199 });
+    const randomLaguProdukKomersial = fakerID_ID.number.int({ min: 0, max: 149 });
+
+    isi_playlist.push({
+      playlist_id: playlist[randomPlaylist].playlist_id,
+      pengguna_id: playlist[randomPlaylist].pengguna_id,
+      lagu_id: lagu_produk_komersial[randomLaguProdukKomersial].lagu_id,
+      produk_komersial_id: lagu_produk_komersial[randomLaguProdukKomersial].produk_komersial_id,
     });
   }
 
