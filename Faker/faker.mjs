@@ -255,10 +255,10 @@ function createDummyData() {
   // Seeding lirik
   for (let i = 0; i < 150; i++) {
     lirik.push({
-      lagu_id: Math.floor(i / 10) + 1,
       line: (i % 10) + 1,
-      text: fakerID_ID.lorem.sentence(),
+      lagu_id: Math.floor(i / 10) + 1,
       writer_id: Math.floor(i / 10) + 1,
+      text: fakerID_ID.lorem.sentence(),
     });
   }
 
