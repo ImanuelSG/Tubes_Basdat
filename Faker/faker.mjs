@@ -57,7 +57,20 @@ function createDummyData() {
     MapLagu.set(i + 1, fakerID_ID.music.songName());
   }
 
-  const subs_type = ["Pelajar", "Perorangan", "Keluarga"];
+  const subs_type = [
+    {
+      type: "Pelajar",
+      price: 35000
+    }, 
+    {
+      type: "Perorangan",
+      price: 55000
+    }, 
+    {
+      type: "Keluarga",
+      price: 85000
+    },
+  ];
   // Users
 
   const apple_id = [];
@@ -81,8 +94,8 @@ function createDummyData() {
 
   for (const subs of subs_type) {
     subscription_plan.push({
-      jenis: subs,
-      harga_per_bulan: fakerID_ID.number.int({ min: 10000, max: 100000 }),
+      jenis: subs.type,
+      harga_per_bulan: subs.price,
     });
   }
 
