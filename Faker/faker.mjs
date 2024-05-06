@@ -126,8 +126,8 @@ function createDummyData() {
         "Perorangan",
         "Keluarga",
       ]),
-      tanggal_subscribe,
-      tanggal_berakhir,
+      tanggal_subscribe: tanggal_subscribe.toISOString().split('T')[0],
+      tanggal_berakhir: tanggal_berakhir.toISOString().split('T')[0],
       status: "inaktif",
     });
     MapSubsDate.set(i + 1, tanggal_berakhir);
@@ -284,8 +284,8 @@ function createDummyData() {
         "Perorangan",
         "Keluarga",
       ]),
-      tanggal_subscribe,
-      tanggal_berakhir,
+      tanggal_subscribe: tanggal_subscribe.toISOString().split('T')[0],
+      tanggal_berakhir: tanggal_berakhir.toISOString().split('T')[0],
       status: "aktif",
     });
     MapSubsDate.set(i + 1, tanggal_berakhir);
