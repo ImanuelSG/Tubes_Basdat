@@ -145,7 +145,7 @@ function createDummyData() {
       label_id: fakerID_ID.number.int({ min: 1, max: 100 }),
       judul: MapLagu.get(i + 1),
       durasi: fakerID_ID.number.int({ min: 120, max: 600 }),
-      tanggal_rilis: dayjs(MapSubsDate.get(randomNumber)).subtract(20, "day"),
+      tanggal_rilis: dayjs(MapSubsDate.get(randomNumber)).subtract(20, "day").format('YYYY-MM-DD'),
     });
     MapLaguMaker.set(i + 1, randomNumber);
   }
@@ -160,10 +160,7 @@ function createDummyData() {
       label_id: fakerID_ID.number.int({ min: 1, max: 100 }),
       judul: generateVideoTitle(), // Generate a descriptive video title
       durasi: fakerID_ID.number.int({ min: 120, max: 600 }),
-      tanggal_rilis: dayjs(MapSubsDate.get(randomNumber)).subtract(
-        randomDateNumber,
-        "day"
-      ),
+      tanggal_rilis: dayjs(MapSubsDate.get(randomNumber)).subtract(randomDateNumber, "day").format('YYYY-MM-DD'),
     });
   }
 
@@ -175,7 +172,7 @@ function createDummyData() {
       id: i + 1,
       judul: MapLagu.get(i + 1) + " Music Video", // Using song names for video titles
       durasi: fakerID_ID.number.int({ min: 120, max: 600 }),
-      tanggal_rilis: dayjs(MapSubsDate.get(randomNumber)).subtract(10, "day"),
+      tanggal_rilis: dayjs(MapSubsDate.get(randomNumber)).subtract(10, "day").format('YYYY-MM-DD'),
       label_id: fakerID_ID.number.int({ min: 1, max: 100 }),
       lagu_id: i + 1, // Explicitly from 1 to 100
       artis_id: MapLaguMaker.get(i + 1),
@@ -229,7 +226,7 @@ function createDummyData() {
       judul: fakerID_ID.music.songName(),
       tipe: randomType,
       genre: fakerID_ID.music.genre(),
-      tanggal_rilis: dayjs(MapSubsDate.get(i + 1)).subtract(20, "day"),
+      tanggal_rilis: dayjs(MapSubsDate.get(i + 1)).subtract(20, "day").format('YYYY-MM-DD'),
     });
 
     // Map untuk lagu dan dimana dia dipromosikan
