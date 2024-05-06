@@ -170,12 +170,12 @@ function createDummyData() {
 
     videoMusiks.push({
       id: i + 1,
+      artis_id: MapLaguMaker.get(i + 1),
+      lagu_id: i + 1, // Explicitly from 1 to 100
+      label_id: fakerID_ID.number.int({ min: 1, max: 100 }),
       judul: MapLagu.get(i + 1) + " Music Video", // Using song names for video titles
       durasi: fakerID_ID.number.int({ min: 120, max: 600 }),
       tanggal_rilis: dayjs(MapSubsDate.get(randomNumber)).subtract(10, "day").format('YYYY-MM-DD'),
-      label_id: fakerID_ID.number.int({ min: 1, max: 100 }),
-      lagu_id: i + 1, // Explicitly from 1 to 100
-      artis_id: MapLaguMaker.get(i + 1),
     });
   }
 

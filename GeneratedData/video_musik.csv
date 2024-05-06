@@ -1,151 +1,151 @@
-"id","judul","durasi","tanggal_rilis","label_id","lagu_id","artis_id"
-1,"Travellin' Man Music Video",333,"2020-07-25",19,1,77
-2,"Sweet Soul Music Music Video",426,"2020-04-17",93,2,81
-3,"She's a Lady Music Video",566,"2021-09-12",41,3,85
-4,"Empire State Of Mind Music Video",430,"2020-06-26",15,4,63
-5,"(I've Had) the Time of My Life Music Video",291,"2020-07-24",54,5,39
-6,"Bitter Sweet Symphony Music Video",328,"2022-08-24",54,6,55
-7,"Chain of Fools Music Video",206,"2021-05-19",74,7,73
-8,"Georgia On My Mind Music Video",523,"2021-08-24",18,8,24
-9,"I'm Sorry Music Video",206,"2020-08-01",6,9,60
-10,"Light My Fire Music Video",138,"2023-01-16",90,10,74
-11,"Beat It Music Video",516,"2021-02-19",40,11,76
-12,"Stars & Stripes Forever Music Video",293,"2020-02-19",63,12,5
-13,"ABC Music Video",409,"2022-03-13",28,13,100
-14,"(You Keep Me) Hangin' On Music Video",126,"2022-06-23",12,14,30
-15,"I'm Your Boogie Man Music Video",225,"2020-03-22",18,15,28
-16,"Personality Music Video",366,"2022-01-14",80,16,18
-17,"Kiss You All Over Music Video",387,"2022-10-30",51,17,17
-18,"Hot Stuff Music Video",540,"2020-02-05",88,18,5
-19,"Eye of the Tiger Music Video",230,"2021-07-10",16,19,65
-20,"Iris Music Video",446,"2020-02-01",59,20,78
-21,"Save the Best For Last Music Video",548,"2021-06-08",87,21,37
-22,"One Music Video",336,"2021-02-26",20,22,29
-23,"Toxic Music Video",498,"2021-10-27",99,23,100
-24,"Crying Music Video",382,"2020-02-09",99,24,36
-25,"Band of Gold Music Video",516,"2020-08-08",22,25,59
-26,"What'd I Say Music Video",560,"2021-10-29",99,26,61
-27,"Vogue Music Video",276,"2022-01-14",74,27,29
-28,"Bad Moon Rising Music Video",474,"2020-06-01",91,28,80
-29,"Everybody Wants to Rule the World Music Video",312,"2021-02-26",81,29,12
-30,"Red Red Wine Music Video",421,"2020-03-22",63,30,60
-31,"Mama Told Me Not to Come Music Video",594,"2021-04-09",15,31,36
-32,"If You Leave Me Now Music Video",401,"2020-10-12",65,32,64
-33,"Stagger Lee Music Video",392,"2022-07-08",3,33,68
-34,"Some Enchanted Evening Music Video",477,"2022-08-13",99,34,66
-35,"Ain't That a Shame Music Video",589,"2020-12-01",88,35,68
-36,"Just My Imagination (Running Away With Me) Music Video",575,"2021-01-08",54,36,6
-37,"Don't Be Cruel Music Video",260,"2022-02-13",66,37,42
-38,"Uncle Albert (Admiral Halsey) Music Video",554,"2021-12-09",50,38,88
-39,"Alone Again (Naturally) Music Video",138,"2021-02-19",10,39,26
-40,"Build Me Up Buttercup Music Video",200,"2022-03-03",32,40,20
-41,"Boulevard of Broken Dreams Music Video",212,"2022-02-25",28,41,75
-42,"Hit the Road Music Video",471,"2022-04-05",64,42,16
-43,"Magic Music Video",342,"2020-08-01",76,43,97
-44,"Living For the City Music Video",203,"2020-02-05",34,44,32
-45,"Feel Good Inc Music Video",404,"2023-01-16",6,45,96
-46,"Freak Me Music Video",390,"2020-04-17",17,46,64
-47,"Rhinestone Cowboy Music Video",542,"2020-07-25",8,47,2
-48,"Johnny B Goode Music Video",297,"2020-04-17",61,48,82
-49,"Dilemma Music Video",299,"2021-05-19",19,49,82
-50,"I'll Take You There Music Video",270,"2020-04-17",55,50,29
-51,"You're Still the One Music Video",182,"2022-08-24",90,51,39
-52,"Vision of Love Music Video",282,"2022-02-13",99,52,49
-53,"Oh Happy Day Music Video",409,"2022-04-12",34,53,60
-54,"Never Gonna Give You Up Music Video",251,"2020-07-27",87,54,69
-55,"Love Child Music Video",309,"2020-02-22",99,55,71
-56,"Car Wash Music Video",150,"2020-02-05",28,56,62
-57,"I'm Sorry Music Video",588,"2020-08-10",80,57,53
-58,"One Sweet Day Music Video",196,"2022-02-13",23,58,53
-59,"Me & Bobby McGee Music Video",181,"2021-06-21",13,59,26
-60,"I'm Looking Over a Four Leaf Clover Music Video",356,"2022-12-29",28,60,12
-61,"Thank You (Falettinme be Mice Elf Again) Music Video",131,"2020-02-17",40,61,37
-62,"Let's Groove Music Video",499,"2021-12-05",18,62,31
-63,"Good Times Music Video",380,"2022-02-25",24,63,41
-64,"Unchained Melody Music Video",434,"2020-02-05",68,64,92
-65,"Single Ladies (Put A Ring On It) Music Video",191,"2022-02-25",5,65,54
-66,"Live & Let Die Music Video",560,"2020-09-25",49,66,21
-67,"Seasons in the Sun Music Video",378,"2022-10-30",76,67,28
-68,"Sugar Sugar Music Video",467,"2021-03-14",94,68,63
-69,"Unbelievable Music Video",195,"2022-09-29",67,69,99
-70,"He's a Rebel Music Video",302,"2022-08-13",25,70,69
-71,"Blurred Lines Music Video",504,"2021-02-19",95,71,68
-72,"Smells Like Teen Spirit Music Video",343,"2022-02-01",94,72,85
-73,"Play That Funky Music Music Video",486,"2022-01-14",15,73,92
-74,"Lights Music Video",231,"2020-11-01",43,74,59
-75,"Another One Bites the Dust Music Video",552,"2020-12-01",88,75,97
-76,"Green Tambourine Music Video",575,"2022-09-04",35,76,2
-77,"Singing The Blues Music Video",214,"2020-02-09",13,77,32
-78,"Grenade Music Video",510,"2021-10-27",77,78,22
-79,"Boogie Oogie Oogie Music Video",154,"2021-12-03",12,79,91
-80,"Under the Boardwalk Music Video",353,"2021-02-19",17,80,78
-81,"In Da Club Music Video",592,"2020-02-17",25,81,55
-82,"Night Fever Music Video",381,"2020-07-25",14,82,1
-83,"Royals Music Video",546,"2021-06-08",88,83,11
-84,"Green River Music Video",170,"2022-09-12",17,84,96
-85,"Blueberry Hill Music Video",502,"2022-08-11",44,85,41
-86,"Gypsies Music Video",354,"2021-12-03",56,86,23
-87,"Colors of the Wind Music Video",313,"2022-03-03",81,87,100
-88,"My Blue Heaven Music Video",123,"2022-11-10",49,88,71
-89,"Waiting For a Girl Like You Music Video",516,"2022-01-14",13,89,9
-90,"I Went to Your Wedding Music Video",195,"2020-08-08",100,90,15
-91,"Near You Music Video",171,"2020-02-17",46,91,96
-92,"I Think I Love You Music Video",210,"2022-03-13",60,92,79
-93,"Because You Loved Me Music Video",405,"2021-03-27",94,93,34
-94,"Tik-Toc Music Video",391,"2021-10-27",57,94,97
-95,"Because You Loved Me Music Video",561,"2022-04-16",40,95,93
-96,"Lonely Boy Music Video",300,"2022-03-03",13,96,11
-97,"A Hard Day's Night Music Video",210,"2020-02-01",52,97,2
-98,"Pop Muzik Music Video",497,"2022-04-16",54,98,99
-99,"These Boots Are Made For Walking Music Video",528,"2022-08-13",35,99,35
-100,"Down Hearted Blues Music Video",336,"2021-06-30",79,100,20
-101,"A Tree in the Meadow Music Video",520,"2021-10-29",76,101,7
-102,"The Girl From Ipanema Music Video",514,"2022-09-29",51,102,7
-103,"All I Have to Do is Dream Music Video",403,"2020-08-01",41,103,20
-104,"Baby Got Back Music Video",182,"2021-03-27",46,104,44
-105,"Ain't No Mountain High Enough Music Video",474,"2022-03-13",70,105,28
-106,"Creep Music Video",456,"2022-08-17",1,106,71
-107,"Oh My Papa (O Mein Papa) Music Video",545,"2022-02-13",96,107,39
-108,"Mr Tambourine Man Music Video",308,"2020-06-01",84,108,51
-109,"Nothing's Gonna Stop Us Now Music Video",321,"2021-01-24",18,109,46
-110,"Kiss & Say Goodbye Music Video",526,"2021-01-24",87,110,85
-111,"Don't Be Cruel Music Video",519,"2020-02-01",27,111,62
-112,"No Scrubs Music Video",534,"2020-12-03",56,112,51
-113,"Without Me Music Video",419,"2020-07-27",10,113,28
-114,"Sweet Soul Music Music Video",539,"2020-07-25",94,114,61
-115,"Jump Music Video",318,"2021-03-27",8,115,45
-116,"Bad Music Video",246,"2020-06-03",4,116,45
-117,"Jack & Diane Music Video",189,"2021-03-27",6,117,52
-118,"White Christmas Music Video",305,"2021-12-03",90,118,51
-119,"There goes my baby Music Video",429,"2020-04-19",11,119,62
-120,"Come Together Music Video",509,"2021-10-28",54,120,77
-121,"A Hard Day's Night Music Video",412,"2020-02-01",76,121,43
-122,"Walk On By Music Video",569,"2020-03-01",20,122,74
-123,"I Can Help Music Video",593,"2021-06-21",37,123,100
-124,"(I've Got a Gal In) Kalamazoo Music Video",314,"2020-02-09",47,124,35
-125,"That Old Black Magic Music Video",148,"2022-09-07",37,125,68
-126,"Shake You Down Music Video",506,"2022-09-16",43,126,28
-127,"12th Street Rag Music Video",144,"2022-03-13",36,127,80
-128,"Oh Happy Day Music Video",318,"2023-01-16",38,128,14
-129,"Mrs Brown You've Got a Lovely Daughter Music Video",239,"2022-01-14",21,129,47
-130,"Wild Thing Music Video",424,"2021-12-05",25,130,78
-131,"Memories Are Made of This Music Video",406,"2022-08-24",71,131,81
-132,"Respect Music Video",373,"2021-12-05",62,132,60
-133,"We Will Rock You Music Video",576,"2021-02-26",82,133,87
-134,"Chapel of Love Music Video",362,"2022-09-07",97,134,47
-135,"Smoke Gets in Your Eyes Music Video",555,"2021-01-08",66,135,63
-136,"Sugar Shack Music Video",475,"2020-02-01",4,136,63
-137,"Philadelphia Freedom Music Video",599,"2022-10-27",44,137,71
-138,"Single Ladies (Put A Ring On It) Music Video",166,"2022-09-16",27,138,43
-139,"You Were Meant for Me Music Video",289,"2021-02-11",14,139,58
-140,"One More Try Music Video",392,"2021-05-19",51,140,24
-141,"I Believe I Can Fly Music Video",549,"2023-01-19",59,141,75
-142,"Don't Leave Me This Way Music Video",170,"2022-10-30",66,142,62
-143,"Bye Bye Love Music Video",357,"2021-12-09",15,143,44
-144,"I Only Have Eyes For You Music Video",369,"2020-11-23",10,144,92
-145,"Un-Break My Heart Music Video",585,"2022-10-24",51,145,75
-146,"Johnny B Goode Music Video",417,"2022-09-29",41,146,70
-147,"The Letter Music Video",422,"2022-11-10",92,147,7
-148,"Waiting For a Girl Like You Music Video",173,"2020-11-05",63,148,30
-149,"Love's Theme Music Video",562,"2021-07-12",76,149,45
-150,"Take a Bow Music Video",522,"2020-12-01",44,150,53
+"id","artis_id","lagu_id","label_id","judul","durasi","tanggal_rilis"
+1,19,1,100,"In Da Club Music Video",333,"2020-02-01"
+2,15,2,69,"Love Me Do Music Video",482,"2020-11-05"
+3,68,3,85,"My Love Music Video",578,"2022-12-09"
+4,52,4,43,"For What It's Worth (Stop Music Video",481,"2021-06-21"
+5,97,5,7,"Paper Planes Music Video",378,"2021-01-16"
+6,39,6,60,"Sweet Soul Music Music Video",363,"2020-12-29"
+7,47,7,6,"Walk Don't Run Music Video",299,"2022-06-09"
+8,51,8,5,"Till The End of Time Music Video",182,"2020-11-29"
+9,52,9,1,"E.T. Music Video",395,"2020-02-01"
+10,83,10,16,"Chattanooga Choo Choo Music Video",193,"2022-06-18"
+11,95,11,73,"Gives You Hell Music Video",302,"2020-02-20"
+12,97,12,94,"People Got to Be Free Music Video",349,"2020-09-14"
+13,20,13,19,"Family Affair Music Video",490,"2020-02-01"
+14,69,14,46,"Whispering Music Video",216,"2020-08-19"
+15,77,15,7,"Some of These Days Music Video",318,"2020-03-13"
+16,33,16,84,"Some Enchanted Evening Music Video",168,"2022-06-24"
+17,39,17,3,"Summertime Blues Music Video",259,"2020-08-27"
+18,14,18,67,"(It's No) Sin Music Video",547,"2020-02-20"
+19,41,19,32,"Say You Music Video",204,"2021-12-28"
+20,83,20,58,"My Blue Heaven Music Video",323,"2021-07-13"
+21,72,21,73,"Grenade Music Video",165,"2022-01-23"
+22,57,22,24,"Karma Chameleon Music Video",213,"2022-08-29"
+23,83,23,44,"I Can't Get Next to You Music Video",334,"2021-10-11"
+24,81,24,20,"Begin the Beguine Music Video",524,"2022-09-10"
+25,18,25,42,"One Sweet Day Music Video",334,"2021-07-13"
+26,65,26,53,"Pon De Replay Music Video",533,"2022-05-09"
+27,70,27,83,"I Love Rock 'n' Roll Music Video",211,"2022-08-25"
+28,98,28,49,"I've Heard That Song Before Music Video",471,"2020-08-11"
+29,72,29,26,"Losing My Religion Music Video",512,"2021-03-26"
+30,93,30,88,"Rush Rush Music Video",315,"2022-05-11"
+31,39,31,97,"My Eyes Adored You Music Video",369,"2020-02-20"
+32,63,32,87,"We Found Love Music Video",458,"2021-08-15"
+33,94,33,66,"You make Me Wanna Music Video",213,"2022-07-09"
+34,64,34,36,"I Want You Back Music Video",134,"2020-11-02"
+35,99,35,98,"Tequila Music Video",136,"2021-11-09"
+36,87,36,47,"What Goes Around Comes Around Music Video",476,"2020-05-10"
+37,16,37,47,"Funkytown Music Video",137,"2022-05-09"
+38,31,38,61,"Mrs Brown You've Got a Lovely Daughter Music Video",412,"2022-06-18"
+39,97,39,42,"How Do You Mend a Broken Heart Music Video",378,"2020-03-11"
+40,78,40,31,"I Walk the Line Music Video",548,"2020-02-26"
+41,56,41,69,"Hips don't lie Music Video",524,"2021-08-28"
+42,44,42,1,"U Got it Bad Music Video",244,"2022-08-23"
+43,18,43,5,"Ballad of the Green Berets Music Video",549,"2022-06-18"
+44,36,44,41,"Dreams Music Video",458,"2022-01-23"
+45,90,45,52,"Midnight Train to Georgia Music Video",264,"2022-12-28"
+46,30,46,11,"Boulevard of Broken Dreams Music Video",436,"2020-11-29"
+47,11,47,46,"I Got You (I Feel Good) Music Video",558,"2021-11-18"
+48,9,48,6,"Nights in White Satin Music Video",545,"2020-09-11"
+49,8,49,29,"We Are Family Music Video",259,"2022-12-09"
+50,70,50,90,"When a Man Loves a Woman Music Video",456,"2020-08-27"
+51,87,51,12,"Truly Madly Deeply Music Video",360,"2022-10-11"
+52,19,52,11,"Sh-Boom (Life Could Be a Dream) Music Video",534,"2021-01-03"
+53,91,53,42,"How Deep is Your Love? Music Video",490,"2020-11-05"
+54,91,54,1,"I Love Rock 'n' Roll Music Video",128,"2020-02-01"
+55,92,55,62,"Disco Duck Music Video",120,"2022-08-23"
+56,97,56,28,"Born in the USA Music Video",501,"2021-11-18"
+57,31,57,18,"Penny Lane Music Video",559,"2022-01-23"
+58,100,58,82,"Georgia On My Mind Music Video",404,"2021-06-03"
+59,88,59,86,"This Love Music Video",244,"2020-10-12"
+60,41,60,12,"Breathe Music Video",132,"2022-12-02"
+61,48,61,15,"Tammy Music Video",294,"2020-02-12"
+62,63,62,97,"Bad Girls Music Video",526,"2020-09-11"
+63,14,63,32,"Hips don't lie Music Video",458,"2020-11-29"
+64,95,64,93,"Thriller Music Video",307,"2020-06-20"
+65,77,65,51,"Keep On Loving You Music Video",294,"2022-07-27"
+66,92,66,77,"Incense & Peppermints Music Video",193,"2021-06-10"
+67,15,67,5,"If You Leave Me Now Music Video",582,"2020-03-13"
+68,9,68,76,"Fly Robin Fly Music Video",189,"2022-11-03"
+69,19,69,64,"A-Tisket A-Tasket Music Video",404,"2021-02-03"
+70,55,70,11,"Nobody Does it Better Music Video",336,"2022-09-28"
+71,56,71,47,"Drops of Jupiter (Tell Me) Music Video",426,"2020-03-13"
+72,66,72,92,"Spill the Wine Music Video",292,"2022-08-23"
+73,45,73,24,"Boom Boom Pow Music Video",492,"2021-12-28"
+74,34,74,39,"Do You Love Me? Music Video",217,"2022-08-23"
+75,51,75,26,"Need You Tonight Music Video",564,"2022-10-12"
+76,78,76,74,"Daydream Believer Music Video",432,"2022-12-02"
+77,79,77,56,"Don't Speak Music Video",542,"2022-07-16"
+78,39,78,6,"Nights in White Satin Music Video",556,"2021-06-03"
+79,58,79,79,"Boogie Woogie Bugle Boy Music Video",263,"2020-02-14"
+80,37,80,64,"We Will Rock You Music Video",276,"2022-08-24"
+81,8,81,66,"I Feel For You Music Video",331,"2022-08-29"
+82,7,82,41,"I Fall to Pieces Music Video",572,"2021-06-10"
+83,11,83,60,"Because I Love You (The Postman Song) Music Video",537,"2022-11-03"
+84,77,84,87,"American Pie Music Video",469,"2022-06-30"
+85,64,85,43,"Downtown Music Video",375,"2022-11-28"
+86,60,86,87,"Blaze of Glory Music Video",400,"2022-05-30"
+87,31,87,21,"Love Hangover Music Video",524,"2022-02-25"
+88,75,88,93,"Gangsta's Paradise Music Video",173,"2021-06-10"
+89,68,89,6,"Without Me Music Video",235,"2021-08-29"
+90,34,90,57,"Macarena Music Video",410,"2022-02-14"
+91,58,91,95,"Call Me Maybe Music Video",291,"2020-08-15"
+92,54,92,27,"Que sera sera (Whatever will be will be) Music Video",316,"2020-12-27"
+93,72,93,44,"Make it With You Music Video",580,"2020-11-05"
+94,38,94,18,"Born in the USA Music Video",413,"2020-05-10"
+95,85,95,67,"Gives You Hell Music Video",543,"2021-07-13"
+96,77,96,60,"The Power of Love Music Video",488,"2021-08-15"
+97,37,97,86,"Brother Louie Music Video",303,"2022-06-30"
+98,48,98,45,"Proud Mary Music Video",386,"2020-10-12"
+99,27,99,94,"Dilemma Music Video",580,"2022-01-23"
+100,84,100,3,"How Do You Mend a Broken Heart Music Video",126,"2022-06-24"
+101,21,101,1,"California Girls Music Video",441,"2020-02-14"
+102,92,102,65,"I'm Your Boogie Man Music Video",461,"2020-08-15"
+103,75,103,76,"The Loco-Motion Music Video",195,"2022-07-09"
+104,84,104,78,"Theme From 'Greatest American Hero' (Believe It Or Not) Music Video",413,"2020-03-13"
+105,64,105,85,"Let's Groove Music Video",364,"2021-10-31"
+106,64,106,21,"Boogie Woogie Bugle Boy Music Video",398,"2021-06-23"
+107,12,107,95,"California Dreamin' Music Video",231,"2020-08-27"
+108,9,108,63,"Third Man Theme Music Video",425,"2022-06-18"
+109,68,109,8,"Rock the Boat Music Video",527,"2021-03-10"
+110,41,110,53,"Blueberry Hill Music Video",213,"2020-12-29"
+111,22,111,8,"After You've Gone Music Video",467,"2020-06-20"
+112,33,112,41,"Ain't Misbehavin' Music Video",435,"2022-10-12"
+113,86,113,28,"Papa Don't Preach Music Video",261,"2021-08-15"
+114,45,114,3,"Pistol Packin' Mama Music Video",474,"2021-08-02"
+115,3,115,61,"The Tracks of My Tears Music Video",600,"2021-06-21"
+116,100,116,82,"The Letter Music Video",183,"2022-05-30"
+117,48,117,56,"Macarena Music Video",257,"2021-02-06"
+118,75,118,1,"Need You Now Music Video",350,"2021-06-03"
+119,83,119,94,"Bitter Sweet Symphony Music Video",299,"2022-12-09"
+120,32,120,33,"I Can't Go For That (No Can Do) Music Video",431,"2022-03-13"
+121,73,121,34,"Sledgehammer Music Video",150,"2022-02-25"
+122,73,122,37,"One O'Clock Jump Music Video",284,"2021-03-26"
+123,8,123,2,"Please Mr Postman Music Video",347,"2022-05-30"
+124,29,124,43,"Fortunate Son Music Video",411,"2020-02-01"
+125,2,125,59,"Night & Day Music Video",159,"2020-08-06"
+126,17,126,16,"1999 Music Video",413,"2021-04-15"
+127,42,127,54,"My Girl Music Video",505,"2021-12-28"
+128,82,128,36,"Spill the Wine Music Video",227,"2022-06-30"
+129,66,129,5,"Boulevard of Broken Dreams Music Video",179,"2022-07-11"
+130,43,130,89,"Take My Breath Away Music Video",392,"2022-05-30"
+131,88,131,64,"Check On It Music Video",473,"2021-06-03"
+132,40,132,82,"Mood Indigo Music Video",242,"2022-05-11"
+133,6,133,6,"Firework Music Video",520,"2021-10-14"
+134,79,134,55,"Girls Just Wanna Have Fun Music Video",509,"2021-08-29"
+135,5,135,75,"Need You Now Music Video",161,"2022-05-30"
+136,6,136,1,"Stuck On You Music Video",356,"2020-12-29"
+137,79,137,66,"This Land is Your Land Music Video",526,"2021-10-11"
+138,88,138,78,"Papa's Got a Brand New Bag Music Video",372,"2022-08-23"
+139,82,139,29,"Big Girls Don't Cry Music Video",560,"2022-05-26"
+140,14,140,4,"Have You Ever Really Loved a Woman? Music Video",132,"2022-07-09"
+141,86,141,16,"Greatest Love of All Music Video",347,"2022-02-25"
+142,33,142,17,"ABC Music Video",302,"2022-10-20"
+143,82,143,48,"You Don't Bring Me Flowers Music Video",527,"2020-11-05"
+144,11,144,27,"Caldonia Boogie (What Makes Your Big Head So Hard) Music Video",161,"2021-06-10"
+145,61,145,46,"He'll Have to Go Music Video",486,"2021-06-03"
+146,82,146,24,"Hollaback Girl Music Video",509,"2021-03-28"
+147,46,147,93,"Gonna Make You Sweat (Everybody Dance Now) Music Video",298,"2021-01-03"
+148,95,148,20,"I Write the Songs Music Video",282,"2021-03-10"
+149,87,149,81,"All Along the Watchtower Music Video",310,"2021-02-21"
+150,14,150,90,"You're Still the One Music Video",180,"2020-08-11"
