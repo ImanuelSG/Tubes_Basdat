@@ -1,29 +1,49 @@
 import { faker } from "@faker-js/faker";
 import { parse } from "json2csv";
 import fs from "fs";
-// Function to create dummy data
+
+// Function to generate random video titles
+function generateVideoTitle() {
+  const adjective = faker.word.adjective(); // Random adjective
+  const noun = faker.word.noun(); // Random noun
+  const actionVerb = faker.word.verb(); // Action verb for variation
+
+  // Common title structures
+  const patterns = [
+    `${adjective} ${noun}`,
+    `The ${adjective} ${noun}`,
+    `Discover the ${adjective} ${noun}`,
+    `${adjective} ${noun}: How to ${actionVerb}`,
+    `Top 10 ${adjective} ${noun}s`,
+    `Secrets of ${adjective} ${noun}`,
+  ];
+
+  return faker.helpers.arrayElement(patterns); // Choose a random pattern
+}
+
+// Function to create dummy data for video-related tables
 function createDummyData() {
   const videoExtras = [];
   const videoMusiks = [];
   const hostVideoExtras = [];
 
-  // Generate 100 dummy data for VideoExtra
+  // Generate 100 dummy data for VideoExtra with dynamic titles
   for (let i = 0; i < 100; i++) {
     videoExtras.push({
       id: i + 1,
       artis_id: faker.number.int({ min: 1, max: 100 }),
       label_id: faker.number.int({ min: 1, max: 100 }),
-      judul: faker.lorem.words(10),
+      judul: generateVideoTitle(), // Generate a descriptive video title
       durasi: faker.number.int({ min: 120, max: 600 }),
       tanggal_rilis: faker.date.past(),
     });
   }
 
-  // Generate 100 dummy data for VideoMusik
+  // Generate 100 dummy data for VideoMusik with dynamic titles
   for (let i = 0; i < 100; i++) {
     videoMusiks.push({
       id: i + 1,
-      judul: faker.music.songName(),
+      judul: faker.music.songName(), // Using song names for video titles
       durasi: faker.number.int({ min: 120, max: 600 }),
       tanggal_rilis: faker.date.past(),
       label_id: faker.number.int({ min: 1, max: 100 }),
