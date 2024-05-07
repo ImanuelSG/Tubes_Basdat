@@ -60,15 +60,15 @@ function createDummyData() {
   const subs_type = [
     {
       type: "Pelajar",
-      price: 35000
-    }, 
+      price: 35000,
+    },
     {
       type: "Perorangan",
-      price: 55000
-    }, 
+      price: 55000,
+    },
     {
       type: "Keluarga",
-      price: 85000
+      price: 85000,
     },
   ];
   // Users
@@ -126,8 +126,8 @@ function createDummyData() {
         "Perorangan",
         "Keluarga",
       ]),
-      tanggal_subscribe: tanggal_subscribe.toISOString().split('T')[0],
-      tanggal_berakhir: tanggal_berakhir.toISOString().split('T')[0],
+      tanggal_subscribe: tanggal_subscribe.toISOString().split("T")[0],
+      tanggal_berakhir: tanggal_berakhir.toISOString().split("T")[0],
       status: "inaktif",
     });
     MapSubsDate.set(i + 1, tanggal_berakhir);
@@ -145,7 +145,9 @@ function createDummyData() {
       label_id: fakerID_ID.number.int({ min: 1, max: 100 }),
       judul: MapLagu.get(i + 1),
       durasi: fakerID_ID.number.int({ min: 120, max: 600 }),
-      tanggal_rilis: dayjs(MapSubsDate.get(randomNumber)).subtract(20, "day").format('YYYY-MM-DD'),
+      tanggal_rilis: dayjs(MapSubsDate.get(randomNumber))
+        .subtract(20, "day")
+        .format("YYYY-MM-DD"),
     });
     MapLaguMaker.set(i + 1, randomNumber);
   }
@@ -160,12 +162,14 @@ function createDummyData() {
       label_id: fakerID_ID.number.int({ min: 1, max: 100 }),
       judul: generateVideoTitle(), // Generate a descriptive video title
       durasi: fakerID_ID.number.int({ min: 120, max: 600 }),
-      tanggal_rilis: dayjs(MapSubsDate.get(randomNumber)).subtract(randomDateNumber, "day").format('YYYY-MM-DD'),
+      tanggal_rilis: dayjs(MapSubsDate.get(randomNumber))
+        .subtract(randomDateNumber, "day")
+        .format("YYYY-MM-DD"),
     });
   }
 
   // Generate 100 dummy data for VideoMusik with dynamic titles
-  for (let i = 0; i < 150; i++) {
+  for (let i = 0; i < 100; i++) {
     const randomNumber = fakerID_ID.number.int({ min: 1, max: 100 });
 
     videoMusiks.push({
@@ -175,7 +179,25 @@ function createDummyData() {
       label_id: fakerID_ID.number.int({ min: 1, max: 100 }),
       judul: MapLagu.get(i + 1) + " Music Video", // Using song names for video titles
       durasi: fakerID_ID.number.int({ min: 120, max: 600 }),
-      tanggal_rilis: dayjs(MapSubsDate.get(randomNumber)).subtract(10, "day").format('YYYY-MM-DD'),
+      tanggal_rilis: dayjs(MapSubsDate.get(randomNumber))
+        .subtract(10, "day")
+        .format("YYYY-MM-DD"),
+    });
+  }
+
+  for (let i = 0; i < 50; i++) {
+    const randomNumber = fakerID_ID.number.int({ min: 1, max: 100 });
+
+    videoMusiks.push({
+      id: i + 1,
+      artis_id: MapLaguMaker.get(i + 1),
+      lagu_id: i + 1, // Explicitly from 1 to 50
+      label_id: fakerID_ID.number.int({ min: 1, max: 100 }),
+      judul: MapLagu.get(i + 1) + " Music Video Part 2", // Using song names for video titles
+      durasi: fakerID_ID.number.int({ min: 120, max: 600 }),
+      tanggal_rilis: dayjs(MapSubsDate.get(randomNumber))
+        .subtract(10, "day")
+        .format("YYYY-MM-DD"),
     });
   }
 
@@ -226,14 +248,15 @@ function createDummyData() {
       judul: fakerID_ID.music.songName(),
       tipe: randomType,
       genre: fakerID_ID.music.genre(),
-      tanggal_rilis: dayjs(MapSubsDate.get(i + 1)).subtract(20, "day").format('YYYY-MM-DD'),
+      tanggal_rilis: dayjs(MapSubsDate.get(i + 1))
+        .subtract(20, "day")
+        .format("YYYY-MM-DD"),
     });
 
     // Map untuk lagu dan dimana dia dipromosikan
     MapKomersial.set(i + 1, i + 1);
   }
 
-  
   // Seeding lirik
   for (let i = 0; i < 150; i++) {
     lirik.push({
@@ -243,7 +266,7 @@ function createDummyData() {
       text: fakerID_ID.lorem.sentence(),
     });
   }
-  
+
   for (let i = 0; i < 200; i++) {
     playlist.push({
       playlist_id: (i % 5) + 1,
@@ -262,13 +285,35 @@ function createDummyData() {
   // Generate 200 dummy data for IsiPlaylist
   for (let i = 0; i < 200; i++) {
     const randomPlaylist = fakerID_ID.number.int({ min: 0, max: 199 });
-    const randomLaguProdukKomersial = fakerID_ID.number.int({ min: 0, max: 149 });
+    const randomLaguProdukKomersial = fakerID_ID.number.int({
+      min: 0,
+      max: 149,
+    });
 
     isi_playlist.push({
       playlist_id: playlist[randomPlaylist].playlist_id,
       pengguna_id: playlist[randomPlaylist].pengguna_id,
       lagu_id: lagu_produk_komersial[randomLaguProdukKomersial].lagu_id,
-      produk_komersial_id: lagu_produk_komersial[randomLaguProdukKomersial].produk_komersial_id,
+      produk_komersial_id:
+        lagu_produk_komersial[randomLaguProdukKomersial].produk_komersial_id,
+    });
+  }
+
+  // Explicitly add 50 more dummy data for lagu with id 100 to 150 to test query
+
+  for (let i = 0; i < 50; i++) {
+    const randomPlaylist = fakerID_ID.number.int({ min: 0, max: 199 });
+    const randomLaguProdukKomersial = fakerID_ID.number.int({
+      min: 99,
+      max: 149,
+    });
+
+    isi_playlist.push({
+      playlist_id: playlist[randomPlaylist].playlist_id,
+      pengguna_id: playlist[randomPlaylist].pengguna_id,
+      lagu_id: lagu_produk_komersial[randomLaguProdukKomersial].lagu_id,
+      produk_komersial_id:
+        lagu_produk_komersial[randomLaguProdukKomersial].produk_komersial_id,
     });
   }
 
@@ -287,8 +332,8 @@ function createDummyData() {
         "Perorangan",
         "Keluarga",
       ]),
-      tanggal_subscribe: tanggal_subscribe.toISOString().split('T')[0],
-      tanggal_berakhir: tanggal_berakhir.toISOString().split('T')[0],
+      tanggal_subscribe: tanggal_subscribe.toISOString().split("T")[0],
+      tanggal_berakhir: tanggal_berakhir.toISOString().split("T")[0],
       status: "aktif",
     });
     MapSubsDate.set(i + 1, tanggal_berakhir);
@@ -337,7 +382,7 @@ fs.writeFileSync("GeneratedData/video_musik.csv", videoMusikCsv);
 fs.writeFileSync("GeneratedData/host_video_extra.csv", hostVideoExtraCsv);
 fs.writeFileSync("GeneratedData/lagu.csv", laguCsv);
 fs.writeFileSync("GeneratedData/apple_id.csv", appleIdCsv);
-fs.writeFileSync("GeneratedData/subscription_data.csv", subscriptionDataCsv);
+fs.writeFileSync("GeneratedData/subscription.csv", subscriptionDataCsv);
 fs.writeFileSync("GeneratedData/subscription_plan.csv", subscriptionPlanCsv);
 fs.writeFileSync("GeneratedData/label.csv", labelCsv);
 fs.writeFileSync("GeneratedData/produk_komersial.csv", produkKomersialCsv);
