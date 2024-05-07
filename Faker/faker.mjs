@@ -52,6 +52,20 @@ function createDummyData() {
   const MapLaguMaker = new Map();
   //Map untuk lagu dan dimana dia dipromosikan
   const MapKomersial = new Map();
+  //Map untuk mencek apakah dia sudah pernah jadi host di video tertentu
+  const MapHost = new Map();
+
+  function addKeyValue(key, value) {
+    // Check if the map already contains the key
+    if (MapHost.has(key)) {
+      // If the key exists, add the value to the existing Set
+      MapHost.get(key).add(value);
+    } else {
+      // If the key does not exist, create a new Set with the value
+      const newSet = new Set([value]);
+      MapHost.set(key, newSet);
+    }
+  }
 
   for (let i = 0; i < 150; i++) {
     MapLagu.set(i + 1, fakerID_ID.music.songName());
@@ -71,11 +85,12 @@ function createDummyData() {
       price: 85000,
     },
   ];
-  // Users
 
+  // Users
   const apple_id = [];
   const subscription_data = [];
   const subscription_plan = [];
+
   // Kontens
   const label = [];
   const videoExtras = [];
@@ -84,7 +99,6 @@ function createDummyData() {
   const hostVideoExtras = [];
 
   // Additions
-
   const lagu_produk_komersial = [];
   const produk_komersial = [];
   const playlist = [];
@@ -135,10 +149,9 @@ function createDummyData() {
 
   for (let i = 0; i < 20; i++) {}
 
-  // Generate 100 dummy data for Lagu
+  // Generate 150 dummy data for Lagu
   for (let i = 0; i < 150; i++) {
     const randomNumber = fakerID_ID.number.int({ min: 1, max: 100 });
-
     lagu.push({
       id: i + 1,
       artis_id: randomNumber,
@@ -171,7 +184,6 @@ function createDummyData() {
   // Generate 100 dummy data for VideoMusik with dynamic titles
   for (let i = 0; i < 100; i++) {
     const randomNumber = fakerID_ID.number.int({ min: 1, max: 100 });
-
     videoMusiks.push({
       id: i + 1,
       artis_id: MapLaguMaker.get(i + 1),
@@ -185,6 +197,7 @@ function createDummyData() {
     });
   }
 
+  // Membuat 50 videoMusik yang part 2 (menggambarkan ada yang bisa punya music video > 1)
   for (let i = 0; i < 50; i++) {
     const randomNumber = fakerID_ID.number.int({ min: 1, max: 100 });
 
@@ -203,10 +216,12 @@ function createDummyData() {
 
   // Generate 100 dummy data for HostVideoExtra
   for (let i = 0; i < 100; i++) {
+    const randomHost = fakerID_ID.number.int({ min: 1, max: 100 });
     hostVideoExtras.push({
-      host_id: fakerID_ID.number.int({ min: 1, max: 100 }),
+      host_id: randomHost,
       video_extra_id: i + 1,
     });
+    addKeyValue(i + 1, randomHost);
   }
 
   // Generate 100 dummy data for Label
@@ -267,6 +282,7 @@ function createDummyData() {
     });
   }
 
+  // Generate 200 dummy data for Playlist
   for (let i = 0; i < 200; i++) {
     playlist.push({
       playlist_id: (i % 5) + 1,
@@ -275,6 +291,7 @@ function createDummyData() {
     });
   }
 
+  // Associate setiap lagu dengan produk komersial
   for (let i = 0; i < 150; i++) {
     lagu_produk_komersial.push({
       lagu_id: i + 1,
@@ -300,7 +317,6 @@ function createDummyData() {
   }
 
   // Explicitly add 50 more dummy data for lagu with id 100 to 150 to test query
-
   for (let i = 0; i < 50; i++) {
     const randomPlaylist = fakerID_ID.number.int({ min: 0, max: 199 });
     const randomLaguProdukKomersial = fakerID_ID.number.int({
@@ -317,6 +333,7 @@ function createDummyData() {
     });
   }
 
+  // Generate 50 dummy data buat data aktif
   for (let i = 0; i < 50; i++) {
     const tanggal_subscribe = fakerID_ID.date.between({
       from: "2024-04-20T00:00:00.000Z",
@@ -337,6 +354,34 @@ function createDummyData() {
       status: "aktif",
     });
     MapSubsDate.set(i + 1, tanggal_berakhir);
+  }
+
+  // Add Special data di lirik dan host agar query 5 bisa tergambar
+
+  // Writer yang menulis lagunya sendiri
+  for (let i = 150; i < 200; i++) {
+    lirik.push({
+      line: (i % 10) + 1,
+      lagu_id: Math.floor(i / 10) + 1,
+      writer_id: lagu[Math.floor(i / 10)].artis_id,
+      text: fakerID_ID.lorem.sentence(),
+    });
+  }
+  // Membuat mereka pernah jadi host juga
+  for (let i = 150; i < 200; i++) {
+    //
+    const randomVideoExtraId = fakerID_ID.number.int({ min: 1, max: 100 });
+    const randomHostId = lagu[Math.floor(i / 10)].artis_id;
+    if (MapHost.has(randomVideoExtraId)) {
+      if (MapHost.get(randomVideoExtraId).has(randomHostId)) {
+        // Jika sudah ada, skip
+        continue;
+      }
+    }
+    hostVideoExtras.push({
+      host_id: lagu[Math.floor(i / 10)].artis_id,
+      video_extra_id: randomVideoExtraId,
+    });
   }
 
   return {
