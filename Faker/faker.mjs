@@ -54,7 +54,10 @@ function createDummyData() {
   const MapKomersial = new Map();
   //Map untuk mencek apakah dia sudah pernah jadi host di video tertentu
   const MapHost = new Map();
+  // Mencegah adanya kombinasi isi_playlist yang berulang (karena sepenuhnya random)
+  const uniqueCombinations = new Set();
 
+  // Untuk mencek apakah sudah ada
   function addKeyValue(key, value) {
     // Check if the map already contains the key
     if (MapHost.has(key)) {
@@ -106,6 +109,7 @@ function createDummyData() {
   const lirik = [];
   const kualitas_audio_lagu = [];
 
+  // Insert subscription type
   for (const subs of subs_type) {
     subscription_plan.push({
       jenis: subs.type,
@@ -113,7 +117,7 @@ function createDummyData() {
     });
   }
 
-  // Generate 100 dummy data for Users
+  // 100 Data apple id dummy
   for (let i = 0; i < 100; i++) {
     apple_id.push({
       id: i + 1,
@@ -124,13 +128,15 @@ function createDummyData() {
     });
   }
 
-  // Generate 100 dummy data for SubscriptionData, assume 100 user and 1 subscription plan all inactive
+  // Generate 100 dummy data untuk subscription plan, untuk memudahkan, record ini dibuat tidak aktif terlebih dahulu
   for (let i = 0; i < 100; i++) {
+    // Tanggal sudah expired
     const tanggal_subscribe = fakerID_ID.date.between({
       from: "2020-01-01T00:00:00.000Z",
       to: "2023-01-01T00:00:00.000Z",
     }); // Generate a random past date
     const tanggal_berakhir = getNextMonthSameDate(tanggal_subscribe); // Get the adjusted next month date
+
 
     subscription_data.push({
       subscription_id: 1,
@@ -144,12 +150,10 @@ function createDummyData() {
       tanggal_berakhir: tanggal_berakhir.toISOString().split("T")[0],
       status: "inaktif",
     });
+    // Ini map untuk tau kapan berakhir
     MapSubsDate.set(i + 1, tanggal_berakhir);
   }
-
-  for (let i = 0; i < 20; i++) {}
-
-  // Generate 150 dummy data for Lagu
+  // Generate 150 dummy data for Lagu, untuk memudahkan agar tanggal rilis valid, maka dibuat h - 20 hari sebelum subscription berakhir (agar pasti valid)
   for (let i = 0; i < 150; i++) {
     const randomNumber = fakerID_ID.number.int({ min: 1, max: 100 });
     lagu.push({
@@ -165,7 +169,7 @@ function createDummyData() {
     MapLaguMaker.set(i + 1, randomNumber);
   }
 
-  // Generate 100 dummy data for VideoExtra with dynamic titles
+  // Generate 100 dummy data for VideoExtra
   for (let i = 0; i < 100; i++) {
     const randomNumber = fakerID_ID.number.int({ min: 1, max: 100 });
     const randomDateNumber = fakerID_ID.number.int({ min: 1, max: 28 });
@@ -200,9 +204,8 @@ function createDummyData() {
   // Membuat 50 videoMusik yang part 2 (menggambarkan ada yang bisa punya music video > 1)
   for (let i = 0; i < 50; i++) {
     const randomNumber = fakerID_ID.number.int({ min: 1, max: 100 });
-
     videoMusiks.push({
-      id: i + 1,
+      id: i + 101,
       artis_id: MapLaguMaker.get(i + 1),
       lagu_id: i + 1, // Explicitly from 1 to 50
       label_id: fakerID_ID.number.int({ min: 1, max: 100 }),
@@ -236,7 +239,7 @@ function createDummyData() {
     });
   }
 
-  // Generate 100 dummy data for Lagu
+  // Generate 100 dummy data for kualitas audio
   for (let i = 0; i < 80; i++) {
     kualitas_audio_lagu.push({
       lagu_id: i + 1,
@@ -299,38 +302,65 @@ function createDummyData() {
     });
   }
 
-  // Generate 200 dummy data for IsiPlaylist
-  for (let i = 0; i < 200; i++) {
-    const randomPlaylist = fakerID_ID.number.int({ min: 0, max: 199 });
-    const randomLaguProdukKomersial = fakerID_ID.number.int({
-      min: 0,
-      max: 149,
-    });
+  // Generate 200 dummy data for isi_playlist
 
-    isi_playlist.push({
-      playlist_id: playlist[randomPlaylist].playlist_id,
-      pengguna_id: playlist[randomPlaylist].pengguna_id,
-      lagu_id: lagu_produk_komersial[randomLaguProdukKomersial].lagu_id,
-      produk_komersial_id:
-        lagu_produk_komersial[randomLaguProdukKomersial].produk_komersial_id,
-    });
+  for (let i = 0; i < 200; i++) {
+    let isUnique = false;
+
+    while (!isUnique) {
+      const randomPlaylist = fakerID_ID.number.int({ min: 0, max: 199 });
+      const randomLaguProdukKomersial = fakerID_ID.number.int({
+        min: 0,
+        max: 99,
+      });
+
+      const playlist_id = playlist[randomPlaylist].playlist_id;
+      const pengguna_id = playlist[randomPlaylist].pengguna_id;
+      const lagu_id = lagu_produk_komersial[randomLaguProdukKomersial].lagu_id;
+      const produk_komersial_id =
+        lagu_produk_komersial[randomLaguProdukKomersial].produk_komersial_id;
+
+      const combinationKey = `${playlist_id}:${pengguna_id}:${lagu_id}:${produk_komersial_id}`;
+
+      if (!uniqueCombinations.has(combinationKey)) {
+        uniqueCombinations.add(combinationKey);
+        isi_playlist.push({
+          playlist_id,
+          pengguna_id,
+          lagu_id,
+          produk_komersial_id,
+        });
+        isUnique = true;
+      }
+    }
   }
 
-  // Explicitly add 50 more dummy data for lagu with id 100 to 150 to test query
+  // Explicitly add 50 unique dummy data for lagu with id 100 to 150
+  // Untuk mempermudah query 5
   for (let i = 0; i < 50; i++) {
-    const randomPlaylist = fakerID_ID.number.int({ min: 0, max: 199 });
-    const randomLaguProdukKomersial = fakerID_ID.number.int({
-      min: 99,
-      max: 149,
-    });
+    let isUnique = false;
 
-    isi_playlist.push({
-      playlist_id: playlist[randomPlaylist].playlist_id,
-      pengguna_id: playlist[randomPlaylist].pengguna_id,
-      lagu_id: lagu_produk_komersial[randomLaguProdukKomersial].lagu_id,
-      produk_komersial_id:
-        lagu_produk_komersial[randomLaguProdukKomersial].produk_komersial_id,
-    });
+    while (!isUnique) {
+      const randomPlaylist = fakerID_ID.number.int({ min: 0, max: 199 });
+
+      const playlist_id = playlist[randomPlaylist].playlist_id;
+      const pengguna_id = playlist[randomPlaylist].pengguna_id;
+      const lagu_id = i + 101;
+      const produk_komersial_id = MapKomersial.get(MapLaguMaker.get(i + 101)); // Assuming this logic for produk_komersial_id
+
+      const combinationKey = `${playlist_id}:${pengguna_id}:${lagu_id}:${produk_komersial_id}`;
+
+      if (!uniqueCombinations.has(combinationKey)) {
+        uniqueCombinations.add(combinationKey);
+        isi_playlist.push({
+          playlist_id,
+          pengguna_id,
+          lagu_id,
+          produk_komersial_id,
+        });
+        isUnique = true;
+      }
+    }
   }
 
   // Generate 50 dummy data buat data aktif
@@ -356,8 +386,6 @@ function createDummyData() {
     MapSubsDate.set(i + 1, tanggal_berakhir);
   }
 
-  // Add Special data di lirik dan host agar query 5 bisa tergambar
-
   // Writer yang menulis lagunya sendiri
   for (let i = 150; i < 200; i++) {
     lirik.push({
@@ -370,17 +398,16 @@ function createDummyData() {
   // Membuat mereka pernah jadi host juga
   for (let i = 150; i < 200; i++) {
     //
-    const randomVideoExtraId = fakerID_ID.number.int({ min: 1, max: 100 });
     const randomHostId = lagu[Math.floor(i / 10)].artis_id;
-    if (MapHost.has(randomVideoExtraId)) {
-      if (MapHost.get(randomVideoExtraId).has(randomHostId)) {
+    if (MapHost.has(i - 100)) {
+      if (MapHost.get(i - 100).has(randomHostId)) {
         // Jika sudah ada, skip
         continue;
       }
     }
     hostVideoExtras.push({
       host_id: lagu[Math.floor(i / 10)].artis_id,
-      video_extra_id: randomVideoExtraId,
+      video_extra_id: i - 100,
     });
   }
 
